@@ -1,0 +1,508 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'Caveat', cursive;
+    font-family: 'Poppins', sans-serif;
+    background-color: aliceblue;
+}
+
+body{
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;  
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    gap: 40px;   
+}
+a{
+    text-decoration: none;
+    
+}
+.menu ul li{
+    list-style: none;
+}
+
+.menu-bar{
+    display: none;
+}
+
+
+
+
+    
+
+/* right contain************************************ */
+
+.right-contain{
+    width: 50%;
+}
+
+.right-contain h1{
+    font-weight: 500;
+    font-size: 40px;
+}
+
+/* .hello{
+    font-size: 28px;
+    font-weight: 300;
+} */
+
+.color{
+    color: rgb(6, 188, 249);
+    margin-bottom: 20px;
+}
+
+.main-text{
+    color: grey;
+}
+
+
+
+
+.btn button{
+    margin-top: 30px;
+    width: 28%;
+    padding: 10px 10px;
+    border: 1px solid rgb(6, 188, 249);
+    border-radius: 3px;
+}
+button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition-duration: 0.5s;
+}
+
+.Book i{
+    background-color: transparent;
+}
+
+.Book{
+    background-color: rgb(6, 188, 249);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    gap: 12px;
+}
+
+.Download{
+    margin-left: 10px;
+}
+
+.img-soft img{
+    display: inline-block;
+    width: 4%;
+}
+
+
+.main-home{
+    margin-top: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-1{ 
+    width: 50%;
+}
+.img-1 img{
+    width: 100%;
+    mix-blend-mode:darken;
+}
+
+.icon ul{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 30px;
+
+}
+
+.icon ul li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    list-style: none;
+    border: 2px solid black;
+    border-radius: 50px;
+}
+
+
+
+/* *****************about section ************************* */
+
+.about{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 100px;
+}
+
+.about-info{
+    width: 50%;
+
+}
+
+.about-info h1{
+    font-size: 40px;
+    font-weight: 500;
+
+}
+
+.about-info p{
+    font-size: 19px;
+    margin-top: 5px;
+    color: grey;
+}
+
+.about-img img{
+    width: 500px;
+    mix-blend-mode: darken;
+}
+
+
+.postman{
+    width: 100px;
+}
+
+.c{
+    width: 100px;
+}
+
+.cplus{
+    width: 100px;
+}
+.vite{
+    width: 100px;
+}
+
+.logo-img{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    color: gray;
+}
+
+.about-text{
+    color: grey;
+}
+
+
+/* proficiency*************** */
+
+label{
+    font-size: 19px;
+    appearance: none;
+}
+
+.progress-bar{
+    margin-top: 40px;
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    border-radius: 50px;
+    appearance: none; 
+    margin-top: 20px;
+    background-color: rgb(235, 229, 229); /* For unsupported browsers */
+}
+
+/* For WebKit-based browsers (Chrome, Safari, Opera) */
+progress::-webkit-progress-bar {
+    background-color: rgb(235, 229, 229); /* Background of the progress bar */
+    border-radius: 50px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #aaa5ff; /* Fill color of the progress bar */
+    border-radius: 50px; /* Makes the bar rounded */
+}
+
+/* For Firefox */
+progress::-moz-progress-bar {
+    background-color: #aaa5ff; 
+    border-radius: 50px;
+}
+
+/* For Internet Explorer and Edge */
+progress::-ms-fill {
+    background-color: #aaa5ff; /* Fill color for Edge */
+    border-radius: 50px;
+}
+
+.Proficiency{
+    margin-top: 100px;
+}
+
+.Proficiency h1{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+
+.Education{
+    margin-top: 100px;
+}
+
+.Education h1{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+.Education-info{
+    margin-top: 30px;
+}
+
+.Education-info img{
+    width: 100px;
+    mix-blend-mode: multiply;
+    margin-top: 10px;
+}
+
+
+
+.Education-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+/* ***************** Experience section ******************** */
+
+.Experience{
+    margin-top: 80px;
+}
+
+.experience-details{
+    width: 30%;
+}
+
+.Experience-info{
+    border: 2px solid black;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background-color: transparent;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    border-style: none;
+    box-shadow: 0 -0.5rem 1rem #0000004d;
+    background-image: linear-gradient(109.6deg, rgba(0, 0, 0, 0.93) 11.2%, rgb(63, 61, 61) 78.9%);
+}
+
+.Experience-info p{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+}
+
+.Experience-info img{
+    position: absolute;
+    top: 130px;
+    
+    background-color: transparent;
+   
+}
+
+.Experience h1{
+    font-size: 40px;
+    font-weight: 400;
+}
+
+
+.word{
+    padding-top: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 .5rem 1rem #0000004d;
+    border-radius: 0 0 10px 10px;
+}
+
+.word h2{
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.word p{
+    margin-top: 10px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    background-color: transparent;
+}
+
+.word span{
+    margin-top: 10px;
+    background-color: transparent;
+    font-weight: 500;
+}
+
+.img-pvg {
+    width: 90px;
+    box-shadow: 0 -0.5rem 1rem #0000004d;
+}
+
+.word1 {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.Experience-info1{
+    border: 2px solid black;
+    height: 11rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    background-color: transparent;
+    position: relative;
+    border-radius: 10px 10px 0 0;
+    border-style: none;
+    box-shadow: 0 -0.5rem 1rem #0000004d;
+    background-image: linear-gradient(180.8deg, rgb(139, 10, 130) 6.9%, rgb(73, 6, 70) 73.2%);
+}
+
+.Experience-info1 p{
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: transparent;
+}
+
+.Experience-info1 img{
+    position: absolute;
+    top: 130px;
+    
+    background-color: transparent;
+   
+}
+
+
+
+/* _________________projects css_______________________ */
+
+.project h1{
+    font-weight: 500;
+    margin-top: 60px;
+
+}
+
+.project1{
+    width: 30%;
+    height: 100%;
+    margin-top: 50px;
+}
+
+.project1 img{
+   width: 100%;
+   box-shadow: 0 -0.5rem 1rem #0000004d;
+   border-radius: 10px 10px 0 0;
+}
+
+.project-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin-top: -10px;
+    width: 100%;
+    box-shadow: 0 0.5rem 1rem #0000004d;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.project-details h2{
+    background-color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.project-details p{
+    background-color: white;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.pwskills{
+    height: 200px;
+}
+
+.project-btn{
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 10px;
+    border-radius: 20px;
+    background-color: rgb(6, 188, 249);
+    border-style: none;
+    box-shadow: 0 0.5rem 1rem #0000004d;
+}
+
+.project-btn i{
+    font-size: 20px;
+    background-color: transparent;
+    padding-right:10px ;
+    color: white;
+}
+
+.project-btn a{
+    font-size: 16px;
+    background-color: transparent;
+    color: white;
+}
+
+.project-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.contact-info{
+    margin-top: 100px;
+}
+
+.location{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 15px;
+    background-color: white;
+    margin-top: 50px;
+}
+
+footer p{
+    background-color: white;
+}
