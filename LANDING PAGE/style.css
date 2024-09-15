@@ -1,0 +1,328 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui;
+}
+
+.social-meida{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 65px;
+    background-image: linear-gradient(to right, #feb65c, #df42b9);
+}
+
+.icons ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    list-style: none;
+    color: white;
+}
+
+.icons ul li {
+    font-size: large;
+    cursor: pointer;
+}
+
+.contacts{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.phone{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.email{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.consult button{
+    padding: 10px 15px;
+    border-radius: 50px;
+    border-color: white;
+    color: white;
+    background-color: transparent;
+    font-size: small;
+    font-weight: 600;
+    cursor: pointer;
+    border-style: none;
+    border: 3px solid white;
+}
+
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.menu-list ul{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.menu-list ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.menu-list ul li button{
+    padding: 10px;
+    background-color: #feb65c;
+    border-style: none;
+}
+
+.slide img{
+    position: relative;
+    width: 100%;
+}
+
+.main-text{
+    position: absolute;
+    top: 56%;
+    left: 100px;
+    padding: 20px;
+    text-align: left;
+    border-left: 4px solid transparent;
+    border-image: linear-gradient(to right, #feb65c, #df42b9);
+    border-image-slice: 1;
+    color: white;
+    width: 47%;
+}
+
+.main-text h5{
+    font-size: 20px;
+    letter-spacing: 10px;
+}
+
+.main-text h1{
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+.main-text p {
+    margin-top: 20px;
+    font-size: small;
+}
+
+.btn{
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn button {
+    padding: 10px 15px;
+    border-radius: 50px;   
+    border-style: none;
+    color: white;
+}
+
+.btn1{
+    background-image: linear-gradient(to right, #feb65c, #df42b9);
+}
+
+.btn2{
+    background-color: transparent;
+    border: 3px solid white;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.busines-section {
+    background-image: linear-gradient(to right, #feb65c, #df42b9);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: white;
+    height: 200px;
+}
+
+.LAUNCH{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.LAUNCH-ICON {
+    border: 2px solid white;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.about{
+    background-image: url(./Assests/aboutusbg.png);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.about-width {
+    width: 90%;
+    display: flex;
+}
+.about p{
+    font-size: 15px;
+    color: gray;
+    width: 85%;
+}
+
+.box{
+    margin-top: 80px;
+}
+
+.line{
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(to right, #feb65c, #df42b9);
+    border-image-slice: 1;
+    width: 70px;
+    padding-top: 10px;
+}
+
+.box h1{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.box h5{
+    font-size: 20px;
+    padding-top: 15px;
+    font-weight: 500;
+}
+
+.about-img img{
+    text-align: center;
+    
+}
+
+.read-btn{
+    margin-top: 20px;
+    padding: 15px 25px;
+    border-style: none;
+    border-radius: 50px;
+    background-color: transparent;
+    background-image: linear-gradient(to right, #feb65c, #df42b9);
+    border-image-slice: 1;
+    color: white;
+    font-weight: bold;
+}
+.about-img{
+    border: 6px solid black;
+    border-image: linear-gradient(to right, #feb65c, #df42b9);
+    border-image-slice: 1;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    margin-top: 65vh;
+}
+
+.Services h1{
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.Services{
+    background-image: url(./Assests/servicesbg.png);
+    background-color: #f5f6f7;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 100px;
+}
+
+.Services-bg{
+    margin-top: 50px;
+    margin-left: 60px;
+}
+
+.image-slide{
+    margin-top: 30px;
+    margin-left: 60px;
+    display: inline-grid;
+}
+
+.heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    margin-left: 32.6%;
+    margin-top: -25px;
+    width: 67.5%;
+    border-radius: 24px 0px 0px 24px;
+    box-shadow: 0px 0px 57px 0px rgba(0, 0, 0, 0.11);
+    
+}
+
+.icon-sign{
+    display: inline-block;
+    padding: 15px 20px;
+    background-color: transparent;
+    background-image: linear-gradient(to right, #feb65c, #df42b9);
+    border-radius: 100px;
+    color: white;
+}
+
+.heading p{
+    text-align: center;
+    font-size: 17px;
+    font-weight: 500;
+    margin-right: 18px;
+}
+
+
+
+.image-slide img{
+    width: 325px;
+    height: 245px;
+}
+
+footer{
+    padding: 20px 25px;
+    background-color: #111;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+footer p{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.copy {
+    background-color: black;
+    color:  white;
+    text-align: center;
+    padding: 10px 15px;
+}
