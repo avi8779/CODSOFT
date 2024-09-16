@@ -1,0 +1,63 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: aliceblue;
+    scroll-behavior: smooth;
+    font-family: 'Caveat', cursive;
+    font-family: 'Poppins', sans-serif;
+}
+
+.about{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about h1{
+    font-size: 80px;
+}
+
+.about-text{
+    margin-top: 30px;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about img{
+    margin-top: 20px;
+}
+
+.about-details{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: aqua;
+    margin-top: 50px;
+    padding: 50px;
+}
+
+.about-details h1{
+    background-color: aqua;
+    font-size: 40px;
+}
+
+.about-info p{
+    padding-top: 20px;
+    background-color: aqua;
+}
+
+b{
+    background-color: transparent;
+}
+
+.footer-text{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
