@@ -68,7 +68,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
         folder: 'job', // Save files in a folder named lms
         width: 250,
         height: 250,
-        gravity: 'faces', // This option tells cloudinary to center the image around detected faces (if any) after cropping or resizing the original image
+        gravity: 'faces', 
         crop: 'fill',
       });
 
@@ -119,6 +119,7 @@ export const registerUser = asyncHandler(async (req, res, next) => {
 export const loginUser = asyncHandler(async (req, res, next) => {
   // Destructuring the necessary data from req object
   const { email, password } = req.body;
+  console.log(req.body)
 
   // Check if the data is there or not, if not throw error message
   if (!email || !password) {
