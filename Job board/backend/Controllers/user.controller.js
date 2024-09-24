@@ -20,23 +20,21 @@ const cookieOptions = {
  * @ACCESS Public
  */
 export const registerUser = asyncHandler(async (req, res, next) => {
-  // Destructuring the necessary data from req object
   const { fullName, email, password, jobTitle, pinCode, city, state, address, gender } = req.body;
+  const avatar = req.file;
 
-  // Check if the data is there or not, if not throw error message
+  console.log(req.body);
+  console.log(req.file);
+
   if (!fullName || !email || !password || !jobTitle || !pinCode || !city || !state || !address || !gender) {
     return next(new AppError('All fields are required', 400));
   }
 
-  // Check if the user exists with the provided email
   const userExists = await User.findOne({ email });
-
-  // If user exists send the reponse
   if (userExists) {
     return next(new AppError('Email already exists', 409));
   }
 
-  // Create new user with the given necessary data and save to DB
   const user = await User.create({
     fullName,
     email,
@@ -49,67 +47,50 @@ export const registerUser = asyncHandler(async (req, res, next) => {
     gender,
     avatar: {
       public_id: email,
-      secure_url:
-        'https://res.cloudinary.com/du9jzqlpt/image/upload/v1674647316/avatar_drzgxv.jpg',
+      secure_url: 'https://res.cloudinary.com/du9jzqlpt/image/upload/v1674647316/avatar_drzgxv.jpg',
     },
   });
 
-  // If user not created send message response
   if (!user) {
-    return next(
-      new AppError('User registration failed, please try again later', 400)
-    );
+    return next(new AppError('User registration failed, please try again later', 400));
   }
 
-  // Run only if user sends a file
-  if (req.file) {
+  if (avatar) {
     try {
-      const result = await cloudinary.v2.uploader.upload(req.file.path, {
-        folder: 'job', // Save files in a folder named lms
+      const result = await cloudinary.v2.uploader.upload(avatar.path, {
+        folder: 'job',
         width: 250,
         height: 250,
-        gravity: 'faces', 
+        gravity: 'faces',
         crop: 'fill',
       });
 
-      // If success
       if (result) {
-        // Set the public_id and secure_url in DB
         user.avatar.public_id = result.public_id;
         user.avatar.secure_url = result.secure_url;
 
-        // After successful upload remove the file from local storage
-        fs.rm(`uploads/${req.file.filename}`);
+        await fs.rm(`uploads/${avatar.filename}`);
       }
     } catch (error) {
-        console.error('Cloudinary Error:', error);
-      return next(
-        new AppError(error || 'File not uploaded, please try again', 400)
-      );
+      console.error('Cloudinary Error:', error.message);
+      return next(new AppError('File upload failed, please try again', 400));
     }
   }
 
-  
-
-  // Save the user object
   await user.save();
 
-  // Generating a JWT token
   const token = await user.generateJWTToken();
-
-  // Setting the password to undefined so it does not get sent in the response
   user.password = undefined;
 
-  // Setting the token in the cookie with name token along with cookieOptions
   res.cookie('token', token, cookieOptions);
 
-  // If all good send the response to the frontend
   res.status(201).json({
     success: true,
     message: 'User registered successfully',
     user,
   });
 });
+
 
 /**
  * @LOGIN

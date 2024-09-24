@@ -4,7 +4,7 @@ import express from 'express'
 import { config } from 'dotenv';
 import morgan from 'morgan';
 import errorMiddleware from './middlewares/error.middleware.js'
-import cors from 'cors'
+import cors from 'cors';
 // import multer from 'multer';
 // const upload = multer();
 
@@ -17,7 +17,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use(cors({
     origin: [process.env.FRONTEND_URI],
-    Credential: true,
+    credentials: true,
 }));
 
 app.use(cookieParser());
