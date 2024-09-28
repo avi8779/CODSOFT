@@ -84,8 +84,7 @@ const Signup = () => {
             const response = await dispatch(createAccount(formData));
             if (response?.payload?.success) {
                 toast.success("Account created successfully");
-                navigate("/"); // Redirect on success
-                // Reset the form data
+                navigate("/"); 
                 setSignupData({
                     fullName: '',
                     email: '',

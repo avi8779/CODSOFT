@@ -9,6 +9,8 @@ import Signup from './Pages/Signup'
 import Login from './Pages/Login'
 import Profile from './Pages/User/Profile'
 import EditProfile from './Pages/User/EditProfile'
+import PostJob from './Pages/Job/PostJob'
+import CreateCompany from './Pages/Company/CreateCompany'
 
 function App() {
 
@@ -20,6 +22,8 @@ function App() {
       <Route path='/login' element={<Login />}></Route>
       <Route path='/user/profile' element={<Profile/>}></Route>
       <Route path='/user/editprofile' element={<EditProfile />} ></Route>
+      <Route path='/post-job' element={<PostJob />}></Route>
+      <Route path='/create-company' element={<CreateCompany/>}></Route>
 
       
 

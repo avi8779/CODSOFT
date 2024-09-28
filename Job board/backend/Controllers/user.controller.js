@@ -23,8 +23,6 @@ export const registerUser = asyncHandler(async (req, res, next) => {
   const { fullName, email, password, jobTitle, pinCode, city, state, address, gender } = req.body;
   const avatar = req.file;
 
-  console.log(req.body);
-  console.log(req.file);
 
   if (!fullName || !email || !password || !jobTitle || !pinCode || !city || !state || !address || !gender) {
     return next(new AppError('All fields are required', 400));

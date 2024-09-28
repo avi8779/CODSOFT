@@ -21,6 +21,7 @@ export const createAccount = createAsyncThunk("/auth/signup", async (data) => {
         return (await res).data;
     } catch(error) {
         toast.error(error?.response?.data?.message);
+        throw error;
     }
 })
 
@@ -52,7 +53,7 @@ export const logout = createAsyncThunk("/auth/logout", async () => {
         });
         return (await res).data;
     } catch(error) {
-        toast.error(error?.response?.data?.message);
+        toast.error(error?.response?.data?.message); 
     }
 });
 

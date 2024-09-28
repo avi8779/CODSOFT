@@ -4,23 +4,23 @@ import Postjob from "../models/postJob.model.js";
 import Company from "../models/company.model.js";
 
 
-// Create a new job posting
+
 export const createJob = asyncHandler(async (req, res, next) => {
     const { numberOfVacancy, jobTitle, jobPosting, city, address, pinCode, state, jobType } = req.body;
 
-    // Check for required fields
+   
     if (!numberOfVacancy || !jobTitle || !jobPosting || !city || !address || !pinCode || !state || !jobType) {
         console.error('Error: All fields are required.');
         return next(new AppError('All fields are required', 400)); 
     }
 
     try {
-        // Check if req.user exists and has a valid id
+       
         if (!req.user || !req.user.id) {
             return next(new AppError('User authentication required', 401));
         }
 
-        // Assuming the company is linked to the user and you need to fetch it from the database
+      
         const company = await Company.findOne({ user: req.user.id });
         
         if (!company) {
@@ -37,8 +37,8 @@ export const createJob = asyncHandler(async (req, res, next) => {
             pinCode,
             state,
             jobType,
-            email: req.user.id, // Assuming you have user authentication
-            company: company.id, // Link the job to the user's company
+            email: req.user.id, 
+            company: company.id, 
             user: req.user.id,
         });
 
@@ -59,7 +59,7 @@ export const createJob = asyncHandler(async (req, res, next) => {
 });
 
 
-// Get all job postings
+
 export const getAllJobs = asyncHandler(async (req, res, next) => {
     try {
         const jobPostings = await Postjob.find();
@@ -69,7 +69,7 @@ export const getAllJobs = asyncHandler(async (req, res, next) => {
     }
 });
 
-// Get a single job posting by ID
+
 export const getJobById = asyncHandler(async (req, res, next) => {
     const { id } = req.params;
 
@@ -84,7 +84,7 @@ export const getJobById = asyncHandler(async (req, res, next) => {
     }
 });
 
-// Update a job posting by ID
+
 export const updateJob = asyncHandler(async (req, res, next) => {
     const {numberOfVacancy, jobTitle, jobPosting, city, address, pinCode, state, jobType} = req.body;
     const { id } = req.params;

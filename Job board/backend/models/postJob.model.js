@@ -1,6 +1,7 @@
 import mongoose, { model, Schema } from "mongoose";
 
 
+
 const postJobSchema = new Schema({
     email: {
         type: mongoose.Schema.Types.ObjectId,

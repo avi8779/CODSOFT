@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { FaBars, FaTimes, FaUserCircle, FaCog, FaInbox, FaLifeRing, FaSignOutAlt } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../assets/logo.png';  // Assuming you have a logo in the assets folder
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { logout, login } from '../Redux/Slices/AuthSlice';
+import { logout } from '../Redux/Slices/AuthSlice';
 import ProfileMenu from './ProfileMenu';
-
-
 
 function HomeLayout() {
     const [nav, setNav] = useState(false);
@@ -16,9 +14,17 @@ function HomeLayout() {
     const isLoggedIn = useSelector((state) => state?.auth?.isLoggedIn);
 
     async function handleLogout(e) {
-        e.preventDefault();
-        const res = await dispatch(logout());
-        if (res?.payload?.success) navigate("/");
+        if (e) e.preventDefault(); // Prevent default behavior if an event is provided
+        try {
+            const res = await dispatch(logout());
+            if (res?.payload?.success) {
+                navigate("/");
+            } else {
+                console.error("Logout failed");
+            }
+        } catch (error) {
+            console.error("Error during logout:", error);
+        }
     }
 
     const handleClick = () => setNav(!nav);
@@ -66,7 +72,7 @@ function HomeLayout() {
             </div>
 
             {/* Hamburger Menu Icon */}
-            <div onClick={handleClick} className="md:hidden z-10">
+            <div onClick={handleClick} className="md:hidden z-10" aria-expanded={nav}>
                 {!nav ? <FaBars /> : <FaTimes />}
             </div>
 

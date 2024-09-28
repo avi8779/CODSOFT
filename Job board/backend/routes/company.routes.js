@@ -1,5 +1,5 @@
 import express from 'express';
-import { createCompany, getCompany, updateCompany, deleteCompany } from '../Controllers/company.controller.js';
+import { createCompany, getAllCompanies, getCompany } from '../Controllers/company.controller.js';
 import { isLoggedIn } from '../middlewares/auth.middleware.js';
 import upload from '../middlewares/multer.middleware.js';
 
@@ -10,8 +10,7 @@ router.post('/create', upload.single("companyLogo"), isLoggedIn, createCompany);
 
 router.get('/getCompany', isLoggedIn, getCompany);
 
-router.put('/update', isLoggedIn, updateCompany);
+router.get('/getAllCompany', isLoggedIn, getAllCompanies)
 
-router.delete('/delete', isLoggedIn, deleteCompany);
 
 export default router;

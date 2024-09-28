@@ -7,7 +7,7 @@ const profileMenuItems = [
   {
     label: "My Profile",
     icon: <FaUserCircle />,
-    route: "/user/profile", 
+    route: "/user/profile",
   },
   {
     label: "Edit Profile",
@@ -35,9 +35,9 @@ function ProfileMenu({ onLogout }) {
   const navigate = useNavigate();
   const userData = useSelector((state) => state?.auth?.data);
 
-  const handleMenuItemClick = (label, route) => {
+  const handleMenuItemClick = (event, label, route) => {
     if (label === "Sign Out") {
-      onLogout();
+      onLogout(event); // Pass the event here if necessary
     } else if (route) {
       navigate(route);
     }
@@ -64,7 +64,7 @@ function ProfileMenu({ onLogout }) {
             return (
               <li 
                 key={label}
-                onClick={() => handleMenuItemClick(label, route)} // Handle click
+                onClick={(event) => handleMenuItemClick(event, label, route)} // Pass the event here
                 className={`flex items-center gap-2 p-2 rounded ${isLastItem ? "hover:bg-red-500/10" : "hover:bg-gray-200"}`}
               >
                 <span className={`text-lg ${isLastItem ? "text-red-500" : "text-black"}`}>

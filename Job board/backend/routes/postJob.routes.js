@@ -6,8 +6,8 @@ const upload = multer();
 
 const router = express.Router();
 
-router.post('/jobs', isLoggedIn, upload.none(), createJob);
-router.get('/jobs', getAllJobs);
+router.post('/create', isLoggedIn, upload.none(), createJob);
+router.get('/get-jobs', getAllJobs);
 router.get('/jobs/:id', getJobById);
 router.put('/jobs/:id', isLoggedIn, updateJob);
 router.delete('/jobs/:id', isLoggedIn, deleteJob);
